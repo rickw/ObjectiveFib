@@ -11,6 +11,7 @@
 @interface Fibber : NSObject
 - (BOOL)loadTestData;
 - (NSUInteger)getFibFor:(NSUInteger)slot;
+- (int)fib:(int)num;
 - (NSUInteger)tellAFib:(NSUInteger)slot;
 - (UIColor *)getRandomUIColor;
 @end

@@ -57,6 +57,19 @@
 }
 
 #pragma mark - Methods
+// the Diamond option
+- (int) fib:(int)num {
+    static NSMutableDictionary *fibCache = nil;
+    if (!fibCache) {
+        fibCache = [NSMutableDictionary new];
+    }
+    if (fibCache[@(num)]) {
+        return [fibCache[@(num)] intValue];
+    }
+    int val = (num == 0) ? 0 : ((num < 3) ? 1 : ([self fib:num-1] + [self fib:num-2]));
+    fibCache[@(num)] = @(val);
+    return val;
+}
 
 - (NSUInteger)tellAFib:(NSUInteger)slot {
     switch (slot) {

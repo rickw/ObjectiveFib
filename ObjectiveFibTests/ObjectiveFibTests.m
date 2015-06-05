@@ -27,6 +27,12 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
+// the Diamond option
+- (void)testFib {
+    for (int i=0; i<40; i++) {
+        XCTAssertEqual([_fibber fib:i], [_fibber getFibFor:i]);
+    }
+}
 
 - (void)testFibber {
     for (int i=0; i<40; i++) {
